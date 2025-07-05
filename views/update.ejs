@@ -1,0 +1,12 @@
+<%- include('partials/header.ejs') %>
+<% if (locals.blog) { %>
+<form action="/update/<%= blog.id %>" method="post">
+    <h2>Update a blog</h2>
+    <input type="text" placeholder="Title" name="title" required value="<%= blog.title %>">
+    <textarea placeholder="Content" name="content" required  rows="15"><%= blog.content %></textarea>
+    <input class="create" type="submit" value="Update Blog">
+</form>
+<% } else { %>
+    <p>Blog post not found.</p>
+<% } %>
+<%- include('partials/footer.ejs') %>
