@@ -75,6 +75,12 @@ footer{
     background-color: #1F2937;
     color: #F8FAFC;
 }
+.nothing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+}
 .items{
     width: 93%;
     flex: 0 0;
@@ -85,6 +91,7 @@ footer{
     overflow-wrap: break-word;
     word-break: break-all;
     margin-bottom: 0.4rem;
+    min-height: 350px;
 }
 .head{
     display: flex;

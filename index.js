@@ -30,7 +30,7 @@ var arr = [
 var index = 4;
 
 app.get("/",(req,res)=>{
-    res.render("index.ejs",{arr})
+    res.render("index.ejs",{arr:arr,length:arr.length})
 });
 app.get("/new",(req,res)=>{
     res.render("new.ejs");
