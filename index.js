@@ -7,11 +7,33 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
-var arr = [];
-var index = 1;
+var arr = [
+  {
+    id: 1,
+    title: "First Blog Post",
+    content: "This is the content of the first blog post. Welcome to the blog!",
+    time: "Monday 1 January 2024 10:00"
+  },
+  {
+    id: 2,
+    title: "Second Blog Post",
+    content: "Here is some more content in the second blog post. Enjoy reading!",
+    time: "Tuesday 2 January 2024 11:30"
+  },
+  {
+    id: 3,
+    title: "Third Blog Post",
+    content: "This is the third example blog post. Stay tuned for more updates!",
+    time: "Wednesday 3 January 2024 14:15"
+  }
+];
+var index = 4;
 
 app.get("/",(req,res)=>{
     res.render("index.ejs",{arr})
+});
+app.get("/new",(req,res)=>{
+    res.render("new.ejs");
 });
 app.post("/create",(req,res)=>{
     if(req.body.title.trim() !== "" && req.body.content.trim() !== ""){

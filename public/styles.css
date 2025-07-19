@@ -10,13 +10,25 @@ main,footer{
     padding: 1rem;
 }
 header{
-    color: #1E40AF;
     font-family: "Playfair Display", serif;
     font-weight: 700;
     background-color:#F8FAFC;
     font-style: italic;
     border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
     
+}
+header a {
+    font-family: 'Lora', serif;
+}
+header a:first-child{
+    color: #1E40AF
+}
+a{
+    text-decoration: none;
 }
 h1{
     margin:0;
