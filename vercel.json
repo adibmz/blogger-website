@@ -1,8 +1,7 @@
 {
   "functions": {
     "api/index.js": {
-      "runtime": "nodejs24.x",
-      "includeFiles": "views/**"
+      "runtime": "nodejs18.x"
     }
   }
 }
