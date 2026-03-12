@@ -55,6 +55,13 @@ h2{
     border-radius: 7px;
     background-color: #B45309;
     margin-bottom: 1rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.create:hover{
+    background-color: #9A3F08;
+}
+.create:active{
+    transform: translateY(1px);
 }
 textarea{
     resize: none;
@@ -92,6 +99,11 @@ footer{
     word-break: break-all;
     margin-bottom: 0.4rem;
     min-height: 350px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.items:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(31, 41, 55, 0.08);
 }
 .head{
     display: flex;
@@ -103,4 +115,11 @@ footer{
 .action{
     display: flex;
     gap: 5px;
+}
+.action a{
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+.action a:hover{
+    opacity: 1;
 }
