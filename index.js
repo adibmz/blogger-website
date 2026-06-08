@@ -1,10 +1,18 @@
 import express from "express";
 import bodyParser from "body-parser";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 3000;
 
-app.use(express.static("public"));
+// Use absolute paths so Vercel serverless can find files
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({extended:true}));
 
 var arr = [
@@ -82,6 +90,12 @@ app.post("/update/:id",(req,res)=>{
     res.redirect("/")
 })
 
-app.listen(port, "0.0.0.0", ()=>{
-    console.log(`listening on port ${port} ...`);
-});
+// Only listen when running locally (not on Vercel)
+if (process.env.VERCEL !== "1") {
+    app.listen(port, "0.0.0.0", ()=>{
+        console.log(`listening on port ${port} ...`);
+    });
+}
+
+// Export for Vercel serverless function
+export default app;
